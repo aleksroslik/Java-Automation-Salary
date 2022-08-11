@@ -8,32 +8,28 @@ public class Main {
         Company company = new Company();
 
         System.out.println("Enter employee's NAME, SURNAME and SALARY:"); // mozna pozniej zmienic na 5 pracownikow
-        for (int i=0; i<=5; i++) {
-            employee.setName(input.next());
-            employee.setSurname(input.next());
-            employee.setSalary(input.nextInt());
+        for (int i = 0; i <= 4; i++) {
+            employee.setAllData(input.next(), input.next(), input.nextInt());
+            employee.getAllData();
         }
 
         menuSelect();
 
         int userInput = input.nextInt();
 
-        /*switch (userInput) {
-            case 1 -> // suma salary + menuSelect
-            case 2 -> // dane wszystkich pracownikow + menuSelect
-            case 3 -> // dodaj kolejnego pracownika + menuSelect
+        switch (userInput) {
+            case 1 -> System.out.println("sum of all salaries");
+            case 2 -> employee.getAllData();
+            case 3 -> employee.setAllData(input.next(), input.next(), input.nextInt());
             case 4 -> {
                 System.out.println("Closing program...");
                 input.close();
             }
-            default -> System.out.println("Please try again - enter 5, 10 or 15 - to get your token");
-            }*/
-
-        employee.getAllData();
-
-        company.employeesList = new ArrayList<>();
-        company.employeesList.add(new Employee());
-
+            default -> System.out.println("Please try again - select one of the options below:");
+            //company.employeesList = new ArrayList<>();
+            //company.employeesList.add(new Employee());
+        }
+        //menuSelect();
     }
     public static void menuSelect() {
         System.out.println("Select from the following options:");

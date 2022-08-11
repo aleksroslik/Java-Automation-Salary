@@ -26,10 +26,10 @@ public class Employee {
         return salary;
     }
 
-    public void setAllData(String name, String surname, int Salary) {
-        this.name = getName();
-        this.surname = getSurname();
-        this.salary = getSalary();
+    public void setAllData(String name, String surname, int salary) {
+        setName(name);
+        setSurname(surname);
+        setSalary(salary);
     }
 
     public void setName(String name) {
