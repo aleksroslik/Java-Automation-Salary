@@ -6,19 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Company company = new Company();
         Scanner input = new Scanner(System.in);
-        company.name = new ArrayList<>();
-        company.surname = new ArrayList<>();
-        company.salary = new ArrayList<>();
+        company.employeeList = new ArrayList<>();
 
-        System.out.println("Please enter initial data for 5 employees, in order to open menu");
+        System.out.println("Please enter initial data for 5 employees, in order to access menu");
 
         for (int i = 0; i <= 4; i++) {
-            System.out.println("Please enter employee name: ");
-            company.name.add(input.next());
-            System.out.println("Please enter employee surname: ");
-            company.surname.add(input.next());
-            System.out.println("Please enter employee's salary: ");
-            company.salary.add(input.nextInt());
+            System.out.println("Please enter employee name, surname and salary: ");
+            company.employeeList.add(new Employee(input.next(), input.next(), input.nextInt()));
         }
         menuSelect();
 
@@ -27,30 +21,25 @@ public class Main {
             switch (userInput) {
                 case 1 -> {
                     AtomicInteger sum = new AtomicInteger();
-                    for (int j = 0; j < company.salary.size(); j++) {
-                        sum.addAndGet(company.salary.get(j));
+                    for (Employee employeeSalary : company.employeeList) {
+                        sum.addAndGet(employeeSalary.getSalary());
                     }
-                    System.out.println("total amount of salaries is: " + sum);
+                    System.out.println("Total amount of all salaries is: " + sum);
                     menuSelect();
                 }
                 case 2 -> {
-                    for (int i = 0; i < company.name.size() && i < company.surname.size() && i < company.salary.size(); i++)
-                        System.out.println
-                                ("Salary for " + company.name.get(i) + company.surname.get(i) + " is " + company.salary.get(i));
+                    for (int i = 0; i < company.employeeList.size(); i++)
+                        System.out.println ("Salary for " + company.employeeList.get(i).toString());
                     menuSelect();
                 }
                 case 3 -> {
-                    System.out.println("Please enter employee name: ");
-                    company.name.add(input.next());
-                    System.out.println("Please enter employee surname: ");
-                    company.surname.add(input.next());
-                    System.out.println("Please enter employee's salary: ");
-                    company.salary.add(input.nextInt());
+                    System.out.println("Please enter employee name, surname and salary: ");
+                    company.employeeList.add(new Employee(input.next(), input.next(), input.nextInt()));
                     menuSelect();
                 }
                 case 4 -> {
                     System.out.println("Closing program...");
-                    input.close();
+                    System.exit(0);
                 }
                 default -> {
                     System.out.println("Please try again - select one of the options below:");

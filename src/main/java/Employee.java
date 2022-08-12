@@ -10,7 +10,20 @@ public class Employee {
         this.salary = salary;
     }
 
-    public void getAllData() {
-        System.out.println("Salary for " + name + " " + surname + " is " + salary);
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "name: " + getName() + " surname: " + getSurname() + " is: " + getSalary();
     }
 }
