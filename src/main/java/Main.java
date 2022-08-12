@@ -21,8 +21,8 @@ public class Main {
             switch (userInput) {
                 case 1 -> {
                     AtomicInteger sum = new AtomicInteger();
-                    for (Employee employeeSalary : company.employeeList) {
-                        sum.addAndGet(employeeSalary.getSalary());
+                    for (Employee employee : company.employeeList) {
+                        sum.addAndGet(employee.getSalary());
                     }
                     System.out.println("Total amount of all salaries is: " + sum);
                     menuSelect();
