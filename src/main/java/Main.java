@@ -29,7 +29,7 @@ public class Main {
                 }
                 case 2 -> {
                     for (int i = 0; i < company.employeeList.size(); i++)
-                        System.out.println ("Salary for " + company.employeeList.get(i).toString());
+                    System.out.println ("Salary for " + company.employeeList.get(i).toString());
                     menuSelect();
                 }
                 case 3 -> {
