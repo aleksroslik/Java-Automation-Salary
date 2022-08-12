@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
+
 public class Company {
-    ArrayList<String> name = new ArrayList<String>();
-    ArrayList<String> surname = new ArrayList<String>();
-    ArrayList<Integer> salary = new ArrayList<Integer>();
+    public ArrayList<String> name;
+    public ArrayList<String> surname;
+    public ArrayList<Integer> salary;
+
+    Employee employee;
+    ArrayList<Employee> employeeList;
+
 }
