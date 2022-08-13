@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,9 +19,9 @@ public class Main {
             int userInput = input.nextInt();
             switch (userInput) {
                 case 1 -> {
-                    AtomicInteger sum = new AtomicInteger();
+                    int sum = 0;
                     for (Employee employee : company.employeeList) {
-                        sum.addAndGet(employee.getSalary());
+                        sum += employee.getSalary();
                     }
                     System.out.println("Total amount of all salaries is: " + sum);
                     menuSelect();
