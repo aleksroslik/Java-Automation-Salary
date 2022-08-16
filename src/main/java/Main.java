@@ -11,7 +11,7 @@ public class Main {
 
         for (int i = 0; i <= 4; i++) {
             System.out.println("Please enter employee name, surname and salary: ");
-            company.employeeList.add(new Employee(input.next(), input.next(), input.nextInt()));
+            company.addNewEmployee();
         }
         menuSelect();
 
@@ -19,21 +19,16 @@ public class Main {
             int userInput = input.nextInt();
             switch (userInput) {
                 case 1 -> {
-                    int sum = 0;
-                    for (Employee employee : company.employeeList) {
-                        sum += employee.getSalary();
-                    }
-                    System.out.println("Total amount of all salaries is: " + sum);
+                    company.salariesTotal();
                     menuSelect();
                 }
                 case 2 -> {
-                    for (int i = 0; i < company.employeeList.size(); i++)
-                    System.out.println ("Salary for " + company.employeeList.get(i).toString());
+                    company.printAllEmployees();
                     menuSelect();
                 }
                 case 3 -> {
                     System.out.println("Please enter employee name, surname and salary: ");
-                    company.employeeList.add(new Employee(input.next(), input.next(), input.nextInt()));
+                    company.addNewEmployee();
                     menuSelect();
                 }
                 case 4 -> {
